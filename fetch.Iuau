@@ -1,0 +1,12 @@
+local HttpService = game:GetService("HttpService")
+
+local url = "https://raw.githubusercontent.com/sspeth000/elmiraroblox/main/panel.luau"
+
+local source = HttpService:GetAsync(url)
+local run = loadstring(source)
+
+if not run then
+	error("Failed to compile panel.luau")
+end
+
+run()
